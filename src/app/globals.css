@@ -24,3 +24,8 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Shadow used when the session timeout notice is visible */
+.session-notice-shadow {
+  box-shadow: 0 8px 24px 0 rgba(30, 64, 175, 0.12);
+}
