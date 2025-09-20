@@ -53,6 +53,7 @@ export default function AdminLogin() {
       <header className="bg-blue-900 text-white py-4 px-8 flex items-center justify-between">
         <div>
           <h1 className="text-lg font-bold flex items-center gap-2">
+            <img src="/indian-emblem.svg" alt="Indian National Emblem" className="w-6 h-6 object-contain" />
             <span className="inline-block align-middle">
               <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
                 <path

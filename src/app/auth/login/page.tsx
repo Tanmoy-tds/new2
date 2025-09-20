@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 export default function Login() {
@@ -9,6 +10,8 @@ export default function Login() {
   const [rememberMe, setRememberMe] = useState(false);
   const [showInfo, setShowInfo] = useState(true);
   const [infoVisible, setInfoVisible] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     setInfoVisible(true);
@@ -22,7 +25,16 @@ export default function Login() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    alert(`Tourist Login\nEmail: ${email}\nRemember Me: ${rememberMe}`);
+    if (!email || !password) {
+      alert("Please enter email and password");
+      return;
+    }
+    try {
+      sessionStorage.setItem("touristAuth", JSON.stringify({ email }));
+    } catch (err) {
+      // ignore
+    }
+    router.push("/dashboard/tourist");
   };
 
   return (
@@ -30,6 +42,7 @@ export default function Login() {
       <header className="bg-blue-900 text-white py-4 px-8 flex items-center justify-between">
         <div>
           <h1 className="text-lg font-bold flex items-center gap-2">
+            <img src="/indian-emblem.svg" alt="Indian National Emblem" className="w-6 h-6 object-contain" />
             <span className="inline-block align-middle">
               <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
                 <path
@@ -57,7 +70,7 @@ export default function Login() {
             }`}
           >
             <span className="font-semibold">For security purposes, this session will timeout after 30 minutes of inactivity.</span>{" "}
-            <span className="text-blue-900">सुरक्षा कारणों से, यह सत्र 30 मिनट की निष्क्रियता के बाद समाप्त हो जाएगा।</span>
+            <span className="text-blue-900">सुरक्षा कारणों से, यह सत्र 30 मिनट की निष्क्र��यता के बाद समाप्त हो जाएगा।</span>
           </div>
         )}
       </div>
@@ -69,6 +82,29 @@ export default function Login() {
 
           <div className="p-4 border rounded">
             <h3 className="text-lg font-medium text-gray-800 mb-3">Citizen / Tourist Login</h3>
+
+            <div className="mb-4 rounded-md border bg-blue-50 p-3 text-sm text-gray-900">
+              <div className="flex items-start justify-between">
+                <div>
+                  <div className="font-semibold">Demo credentials</div>
+                  <div className="mt-1 text-xs text-gray-600">Use these to try the dashboard without registration.</div>
+                  <div className="mt-2 text-sm">
+                    <div>Email: <span className="font-medium text-gray-900">tourist.demo@gov.in</span></div>
+                    <div>Password: <span className="font-medium text-gray-900">Demo@1234</span></div>
+                  </div>
+                </div>
+                <div className="ml-4 flex-shrink-0">
+                  <button
+                    type="button"
+                    onClick={() => { setEmail("tourist.demo@gov.in"); setPassword("Demo@1234"); }}
+                    className="rounded-md bg-blue-700 px-3 py-2 text-sm font-medium text-white hover:bg-blue-800"
+                  >
+                    Use demo
+                  </button>
+                </div>
+              </div>
+            </div>
+
             <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
@@ -83,7 +119,7 @@ export default function Login() {
                   </span>
                   <input
                     type="email"
-                    className="w-full pl-10 pr-3 py-2 border rounded focus:outline-none focus:ring focus:border-blue-400 placeholder:text-gray-500 placeholder:font-medium"
+                    className="w-full text-gray-900 pl-10 pr-3 py-2 border rounded focus:outline-none focus:ring focus:border-blue-400 placeholder:text-gray-600 placeholder:font-medium"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
@@ -103,14 +139,32 @@ export default function Login() {
                       />
                     </svg>
                   </span>
+
                   <input
-                    type="password"
-                    className="w-full pl-10 pr-3 py-2 border rounded focus:outline-none focus:ring focus:border-blue-400 placeholder:text-gray-500 placeholder:font-medium"
+                    type={showPassword ? "text" : "password"}
+                    className="w-full text-gray-900 pl-10 pr-10 py-2 border rounded focus:outline-none focus:ring focus:border-blue-400 placeholder:text-gray-600 placeholder:font-medium"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
                     placeholder="Enter your password"
                   />
+
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword((s) => !s)}
+                    aria-label={showPassword ? "Hide password" : "Show password"}
+                    className="absolute right-2 top-2 inline-flex items-center gap-2 rounded px-2 py-1 text-sm text-gray-600 hover:bg-gray-100"
+                  >
+                    {showPassword ? (
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
+                        <path d="M2.47 2.47a.75.75 0 0 0-1.06 1.06l1.66 1.66A11.95 11.95 0 0 0 1.5 12c2.5 4.5 6.9 7.5 10.5 7.5 2.1 0 4.1-.6 5.7-1.7l2 2a.75.75 0 1 0 1.06-1.06L2.47 2.47ZM12 18c-3.2 0-6.4-2.4-8.5-6 1.4-2.3 3.6-4 6.1-4.7l1.4 1.4A3 3 0 0 0 12 14a3 3 0 0 0 1.3-.3l1.7 1.7C14.7 16.9 13.4 18 12 18Zm0-10a3 3 0 0 1 3 3c0 .3-.04.6-.12.9l-3.78-3.78A2.98 2.98 0 0 1 12 8Z" />
+                      </svg>
+                    ) : (
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
+                        <path d="M12 5c-4 0-7.5 2.6-9 6 1.5 3.4 5 6 9 6s7.5-2.6 9-6c-1.5-3.4-5-6-9-6Zm0 10a4 4 0 1 1 0-8 4 4 0 0 1 0 8Zm0-6a2 2 0 1 0 .001 3.999A2 2 0 0 0 12 9Z" />
+                      </svg>
+                    )}
+                  </button>
                 </div>
               </div>
 
