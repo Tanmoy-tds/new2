@@ -42,18 +42,10 @@ export default function Login() {
       <header className="bg-blue-900 text-white py-4 px-8 flex items-center justify-between">
         <div>
           <h1 className="text-lg font-bold flex items-center gap-2">
-            <img src="/indian-emblem.svg" alt="Indian National Emblem" className="w-6 h-6 object-contain" />
-            <span className="inline-block align-middle">
-              <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
-                <path
-                  fill="currentColor"
-                  d="M12 2a7 7 0 0 1 7 7v3.382a2 2 0 0 0 .553 1.382l1.447 1.447A2 2 0 0 1 22 17.414V19a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-1.586a2 2 0 0 1 .553-1.382l1.447-1.447A2 2 0 0 0 5 12.382V9a7 7 0 0 1 7-7Zm0 2a5 5 0 0 0-5 5v3.382a4 4 0 0 1-1.106 2.764l-1.447 1.447A1 1 0 0 0 3 17.414V19a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-1.586a1 1 0 0 0-.447-.829l-1.447-1.447A4 4 0 0 1 17 12.382V9a5 5 0 0 0-5-5Z"
-                />
-              </svg>
-            </span>
-            Tourist Safety Monitoring
+            <img src="https://cdn.builder.io/api/v1/image/assets%2Fd80b622de37e435587a7dad3146fc7f7%2Ff4b3a6c675644e11923e3dc795e8794c?format=webp&width=800" alt="Smart Tourist Safety System Logo" className="w-8 h-8 md:w-10 md:h-10 object-contain" />
+            Smart Tourist Safety System
           </h1>
-          <div className="text-xs">Ministry of Tourism & Home Affairs | पर्यटन और गृह मंत्रालय</div>
+          <div className="text-xs">AI-Powered Safety Monitoring & Response</div>
         </div>
         <div className="flex gap-2 text-sm">
           <span className="cursor-pointer hover:underline">हिंदी</span>
@@ -76,7 +68,7 @@ export default function Login() {
       </div>
 
       <main className="flex flex-1 flex-col items-center justify-start">
-        <div className="bg-white rounded-lg shadow-lg p-8 w-full max-w-4xl min-h-[480px] flex flex-col justify-start mt-2">
+        <div className="bg-white rounded-lg shadow-lg p-6 w-full max-w-3xl min-h-[360px] flex flex-col justify-start mt-2">
           <h2 className="text-2xl font-bold text-center text-blue-900 mb-4">Login</h2>
           <div className="text-center text-xs text-gray-600 mb-6">Secure access to government services | सरकारी सेवाओं तक सुरक्षित पहुँच</div>
 

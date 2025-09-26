@@ -19,13 +19,27 @@
   }
 }
 
+html { font-size: 20px; }
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.45;
 }
 
 /* Shadow used when the session timeout notice is visible */
 .session-notice-shadow {
   box-shadow: 0 8px 24px 0 rgba(30, 64, 175, 0.12);
+}
+
+/* Header login button — standardized across desktop and mobile */
+.header-login-btn {
+  @apply text-sm font-semibold rounded-full px-3 py-1.5 bg-gradient-to-r from-blue-600 to-blue-800 text-white shadow-md transition transform inline-flex items-center gap-2;
+}
+.header-login-btn:hover {
+  @apply scale-105;
+}
+.header-login-btn:focus {
+  @apply outline-none ring-2 ring-blue-300;
 }

@@ -26,7 +26,7 @@ export default function AlertButton({ label = 'Raise Alert', kind = 'sos' as con
       onClick={triggerAlert}
       aria-label={label}
       title={label}
-      className="fixed bottom-6 right-6 z-20 inline-flex items-center gap-2 rounded-full bg-red-600 px-5 py-3 text-white shadow-lg hover:bg-red-700 focus:outline-none focus:ring-4 focus:ring-red-300"
+      className="fixed bottom-6 right-6 z-20 inline-flex items-center gap-2 rounded-full bg-red-600 px-5 py-3 text-white shadow-lg hover:bg-red-700 focus:outline-none focus:ring-4 focus:ring-red-300 md:hidden"
     >
       <span className="inline-block h-2.5 w-2.5 rounded-full bg-white animate-pulse" />
       <span className="font-semibold text-sm">{sending ? 'Sending…' : label}</span>

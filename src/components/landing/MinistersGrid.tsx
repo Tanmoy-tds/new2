@@ -2,19 +2,19 @@
 
 const MINISTERS = [
   {
-    img: "https://cdn.builder.io/api/v1/image/assets%2Fd80b622de37e435587a7dad3146fc7f7%2F6276d5656a834f8f9383669e69a50b65?format=webp&width=800",
+    img: "https://cdn.builder.io/api/v1/image/assets%2Fd80b622de37e435587a7dad3146fc7f7%2Fe357d0e68da94dfe9444d9eabf807195?format=webp&width=800",
     role: "Hon'ble Prime Minister",
     office: "Head of Government",
   },
   {
-    img: "https://cdn.builder.io/api/v1/image/assets%2Fd80b622de37e435587a7dad3146fc7f7%2F2c2d9e00a10e42e4bc8ac8e64cf82c88?format=webp&width=800",
+    img: "https://cdn.builder.io/api/v1/image/assets%2Fd80b622de37e435587a7dad3146fc7f7%2F90e8a3f8c8684d71be829f5989ece90b?format=webp&width=800",
     role: "Minister of Tourism",
     office: "Ministry of Tourism",
   },
   {
-    img: "https://cdn.builder.io/api/v1/image/assets%2Fd80b622de37e435587a7dad3146fc7f7%2F01fb595dc6ca4388b63b7a80a9bb5694?format=webp&width=800",
-    role: "Minister of State (Tourism)",
-    office: "Ministry of Tourism",
+    img: "https://cdn.builder.io/api/v1/image/assets%2Fd80b622de37e435587a7dad3146fc7f7%2Fe562186376fd4b8b9d79b556ecc7951d?format=webp&width=800",
+    role: "Minister of Railways",
+    office: "Ministry of Railways",
   },
 ];
 

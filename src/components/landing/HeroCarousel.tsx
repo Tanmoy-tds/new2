@@ -20,7 +20,7 @@ export default function HeroCarousel() {
 
   return (
     <div className="relative w-full rounded-lg overflow-hidden">
-      <div className="h-screen w-full relative">
+      <div className="h-[62vh] md:h-[68vh] lg:h-[72vh] w-full relative">
         {SLIDES.map((src, i) => (
           <img
             key={src}

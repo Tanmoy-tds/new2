@@ -1,15 +1,20 @@
-import EmergencyContacts from "@/components/dashboard/EmergencyContacts";
-import PanicButton from "@/components/dashboard/PanicButton";
+"use client";
 
-export default function TouristEmergencyPage() {
+import Card from "@/components/dashboard/ui/Card";
+import ContactList from "@/components/dashboard/shared/ContactList";
+import PanicButton from "@/components/dashboard/shared/PanicButton";
+
+export default function EmergencyPage() {
   return (
-    <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
-      <div className="lg:col-span-2">
-        <EmergencyContacts expanded />
-      </div>
-      <div>
-        <PanicButton />
-      </div>
+    <div className="space-y-6">
+      <Card>
+        <div className="flex items-center justify-between">
+          <h2 className="text-lg font-semibold">Emergency Contacts</h2>
+          <PanicButton label="Panic" />
+        </div>
+        <p className="text-sm text-gray-600 mt-2">Call or reach out to local emergency services.</p>
+      </Card>
+      <ContactList />
     </div>
   );
 }

@@ -12,10 +12,10 @@ export default function HomeLanding() {
       <header className="site-header w-full bg-gradient-to-r from-white/95 to-sky-50 backdrop-blur sticky top-0 z-40 shadow-sm border-b border-gray-200">
         <div className="flex items-center justify-between px-3 md:px-6 py-4 w-full">
           <div className="flex items-center gap-4">
-            <img src="/indian-emblem.svg" alt="Indian National Emblem" className="h-10 w-10 object-contain" />
+            <img src="https://cdn.builder.io/api/v1/image/assets%2Fd80b622de37e435587a7dad3146fc7f7%2Ff4b3a6c675644e11923e3dc795e8794c?format=webp&width=800" alt="Smart Tourist Safety System Logo" className="h-12 w-12 md:h-14 md:w-14 object-contain" />
             <div>
-              <div className="font-extrabold text-xl md:text-2xl tracking-tight text-blue-900">North Eastern India Tourism Portal</div>
-              <div className="text-sm text-gray-600">Ministry of Tourism • Ministry of Development of North Eastern Region</div>
+              <div className="font-extrabold text-xl md:text-2xl tracking-tight text-blue-900">Smart Tourist Safety System</div>
+              <div className="text-sm text-gray-600">AI-Powered Safety Monitoring & Response</div>
             </div>
           </div>
 
@@ -24,25 +24,25 @@ export default function HomeLanding() {
             <Link href="/auth/main" className="text-lg font-semibold text-gray-800 hover:text-blue-700 transition">Destinations</Link>
             <Link href="/auth/main#events" className="text-lg font-semibold text-gray-800 hover:text-blue-700 transition">Events</Link>
             <Link href="/auth/contact" className="text-lg font-semibold text-gray-800 hover:text-blue-700 transition">Contact</Link>
-            <Link href="/auth/login" className="ml-2 inline-flex items-center gap-2 text-lg font-semibold rounded-full px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-800 text-white shadow-lg hover:scale-105 transform transition">Login</Link>
+            <Link href="/auth/login" className="header-login-btn ml-2">Login</Link>
           </nav>
 
           <div className="md:hidden">
-            <Link href="/auth/login" className="text-sm font-semibold rounded-full px-3 py-2 bg-blue-700 text-white shadow">Login</Link>
+            <Link href="/auth/login" className="header-login-btn">Login</Link>
           </div>
         </div>
       </header>
 
-      <main className="container mx-auto px-6 py-8">
+      <main className="container mx-auto px-6 py-6">
         <div className="mb-4">
           <NewsTicker />
         </div>
 
-        <section className="mb-8">
+        <section className="mb-6">
           <HeroCarousel />
         </section>
 
-        <section className="mt-8 bg-white rounded-lg shadow p-6">
+        <section className="mt-6 bg-white rounded-lg shadow p-6">
           <div className="flex items-start justify-between gap-6 flex-col lg:flex-row">
             <div className="lg:flex-1">
               <h2 className="text-2xl font-bold text-blue-700 mb-3">About the Ministries</h2>
@@ -78,12 +78,12 @@ export default function HomeLanding() {
           </div>
         </section>
 
-        <section className="mt-8">
+        <section className="mt-6">
           <h3 className="text-lg font-semibold text-gray-800 mb-3">Photo Gallery</h3>
           <PhotoGallery />
         </section>
 
-        <section id="events" className="mt-8">
+        <section id="events" className="mt-6">
           <h3 className="text-lg font-semibold text-gray-800 mb-3">Featured Programs & News</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="rounded-lg bg-white p-4 shadow">
@@ -103,7 +103,7 @@ export default function HomeLanding() {
 
       </main>
 
-      <footer className="mt-12 border-t bg-white/90 py-6">
+      <footer className="mt-10 border-t bg-white/90 py-6">
         <div className="container mx-auto px-6 text-sm text-gray-600">&copy; {new Date().getFullYear()} Government of India — North Eastern India Tourism Portal</div>
       </footer>
 

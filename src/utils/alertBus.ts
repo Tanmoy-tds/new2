@@ -47,7 +47,7 @@ export function subscribeAlerts(onAlert: (alert: AdminAlert) => void): Unsubscri
     const data = ev?.data;
     if (data && data.type === 'ADMIN_ALERT' && data.alert) onAlert(data.alert as AdminAlert);
   };
-  ch?.addEventListener('message', onMessage);
+  ch?.addEventListener('message', onMessage as EventListener);
 
   const onStorage = (e: StorageEvent) => {
     if (!e.key || !e.newValue) return;
@@ -61,7 +61,7 @@ export function subscribeAlerts(onAlert: (alert: AdminAlert) => void): Unsubscri
   window.addEventListener('storage', onStorage);
 
   return () => {
-    ch?.removeEventListener('message', onMessage);
+    ch?.removeEventListener('message', onMessage as EventListener);
     window.removeEventListener('storage', onStorage);
   };
 }
